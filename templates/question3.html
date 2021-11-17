@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} question_three {% endblock %}
+
+
+{% block content %} 
+
+<h1>{{question3}}</h1>
+
+<form action="/question/4", methods = ["POST"]>
+    {{yes}} <input type="radio" name="{{yes}}">
+    {{no}} <input type="radio" name="{{no}}">
+    <button>Next Question</button>
+</form>
+
+{% for x in re %}
+<h2>{{x}}</h2>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} question_one {% endblock %}
+
+
+{% block content %} 
+
+<h1>{{question1}}</h1>
+
+<form action="/question/2", methods = ["POST"]>
+    {{yes}} <input type="radio" name="{{yes}}">
+    {{no}} <input type="radio" name="{{no}}">
+    <button>Nest Question</button>
+</form>
+
+{% for k, v in re %}
+<h2>{{k}}</h2>
+{% endfor %}
+
+
+{% endblock %}
