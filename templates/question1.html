@@ -5,17 +5,13 @@
 
 {% block content %} 
 
-<h1>{{question1}}</h1>
+<h1>{{survey.questions[0].question}}</h1>
 
-<form action="/question/2", methods = ["POST"]>
-    {{yes}} <input type="radio" name="{{yes}}">
-    {{no}} <input type="radio" name="{{no}}">
-    <button>Nest Question</button>
-</form>
-
-{% for k, v in re %}
-<h2>{{k}}</h2>
-{% endfor %}
-
+<form action="/question/2" method="post">
+    {% for question in survey.questions[0].choices %}
+    <p><input type="radio" name="answer" value="{{question}}">{{question}}</p>
+    {% endfor %}
+    <button>Continue</button>
+ </form>
 
 {% endblock %}
